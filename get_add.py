@@ -19,13 +19,12 @@ def create_soup(url):
 
 
 def get_info(table, base_url, set_hash, list_hash_url, infa):
-    r""" Получает информацию со страницы, определяет ее новизну, отправляет новую информацию в файл и телеграмм-боту,
-    а также выводит на экран (Уместить в одну строчку)
+    r""" Анализирует таблицу с объявлениями и отправляет новую информацию в файл и телеграмм-бот
 
         :param table: :class: teg, содержит объявления.
         :param base_url: :class: str.
         :param set_hash: :class: set, множество хешей url-адресов.
-        :param list_hash_url: :class: file, хранит с прошлых  запусков программы.
+        :param list_hash_url: :class: file, хранит с прошлых запусков программы.
         :param infa: :class: file, хранит информацию из объявлений.
         :return: :class: set, содержит уникальные url-адреса объявлений.
         """
