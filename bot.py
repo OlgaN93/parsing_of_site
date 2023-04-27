@@ -30,7 +30,7 @@ def start(message):
                 curr_url = base_url + href
                 soup_curr_p = get_add.create_soup(curr_url)
                 table = soup_curr_p.find(lambda tag: tag.name == 'table' and tag.get('class') == ['car_list'])
-                links = get_add.get_info(table, base_url, set_hash, list_hash_url, infa)
+                links = get_add.pars_and_send_info(table, base_url, set_hash, list_hash_url, infa)
                 for link in links:
                     bot.send_message(message.chat.id, link)
                     sleep(1)
@@ -38,7 +38,7 @@ def start(message):
         while True:
             soup_first_p = get_add.create_soup(first_page)
             table = soup_first_p.find(lambda tag: tag.name == 'table' and tag.get('class') == ['car_list'])
-            links = get_add.get_info(table, base_url, set_hash, list_hash_url, infa)
+            links = get_add.pars_and_send_info(table, base_url, set_hash, list_hash_url, infa)
             for link in links:
                 bot.send_message(message.chat.id, link)
 
@@ -50,4 +50,4 @@ def start(message):
 
 
 if __name__ == '__main__':
-    bot.infinity_polling()
+    bot.polling(none_stop=True, interval=0)
