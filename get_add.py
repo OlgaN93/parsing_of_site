@@ -19,6 +19,7 @@ def create_soup(url):
 
 
 def pars_and_send_info(table, base_url, set_hash, list_hash_url, infa):
+
     r""" Анализирует таблицу с объявлениями и отправляет новую информацию в файл и телеграмм-бот
 
         :param table: :class: teg, содержит объявления.
@@ -37,19 +38,19 @@ def pars_and_send_info(table, base_url, set_hash, list_hash_url, infa):
         url_hash = hashlib.md5(url.encode()).hexdigest()
         if url_hash not in set_hash:
             set_hash.add(url_hash)
-            urls.add(url)
-            print(url_hash, file=list_hash_url)
             price = td_with_address.next_sibling.string
             floor = td_with_address.next_sibling.next_sibling.string
+            urls.add(url)
+            print(url_hash, file=list_hash_url)
             print(f"""Ссылка: {url}
-    Адрес: {tag_a.string}
-    Цена: {price}
-    Этаж: {floor if floor is not None else 'не указан'}
-    """, file=infa)
+            Адрес: {tag_a.string}
+            Цена: {price}
+            Этаж: {floor if floor is not None else 'не указан'}
+            """, file=infa)
             result = f"""Ссылка: {url}
-    Адрес: {tag_a.string}
-    Цена: {price}
-    Этаж: {floor if floor is not None else 'не указан'}
-    """
+            Адрес: {tag_a.string}
+            Цена: {price}
+            Этаж: {floor if floor is not None else 'не указан'}
+            """
             print(result)
     return urls
