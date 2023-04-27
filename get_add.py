@@ -18,7 +18,7 @@ def create_soup(url):
     return soup
 
 
-def get_info(table, base_url, set_hash, list_hash_url, infa):
+def pars_and_send_info(table, base_url, set_hash, list_hash_url, infa):
     r""" Анализирует таблицу с объявлениями и отправляет новую информацию в файл и телеграмм-бот
 
         :param table: :class: teg, содержит объявления.
