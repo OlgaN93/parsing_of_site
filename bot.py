@@ -22,7 +22,6 @@ def start(message):
         get_ad.create_bd(bd)
         connection = get_ad.connection_bd(bd)
         cursor = connection.cursor()
-        print(type(cursor))
         get_ad.create_table(connection, cursor, tbl)
 
         for sibling in font.b.next_siblings:
@@ -34,7 +33,6 @@ def start(message):
                 for tr in table.tr.next_siblings:
                     try:
                         info = get_ad.pars_info(tr, base_url)
-                        print(type(info))
                         link = get_ad.save_info(info, cursor, tbl)
                         bot.send_message(message.chat.id, link)
                         sleep(1)
