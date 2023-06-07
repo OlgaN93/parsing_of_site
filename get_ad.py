@@ -8,6 +8,7 @@ from config import your_password
 
 
 def create_soup(url):
+
     r""" Получает и парсит страницу по переданному URL-адресу
 
         :param url: :class: str.
@@ -64,6 +65,7 @@ def create_bd(bd):
 
         :param bd: :class: str, название базы данных.
         """
+    
     conn_main = psycopg2.connect(user='postgres',
                                  password=your_password,
                                  host='localhost',
@@ -130,4 +132,3 @@ def close_bd(conn_bd, cur_bd):
     if conn_bd:
         cur_bd.close()
         conn_bd.close()
-#TODO: уровень логирования
