@@ -11,7 +11,6 @@ bot = telebot.TeleBot(config.token)
 
 first_page = config.domain + constants.path_to_page + constants.params_to_page
 
-
 try:
     metods.create_db(config.db_password, config.db_ads)
     connection = metods.connection_db(config.db_password, config.db_ads)
