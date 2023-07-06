@@ -28,7 +28,6 @@ finally:
 def new_ads(message):
     while True:
         try:
-            #TODO: Убрать new
             conn = metods.connection_db(config.db_password, config.db_ads)
             cur = conn.cursor()
             soup_p = metods.create_soup(first_page)
@@ -52,6 +51,6 @@ def new_ads(message):
         print('Цикл завершён')
         sleep(config.period_check_data_cek)
 
-#TODO: Разобраться с полингом
+
 if __name__ == '__main__':
     bot.polling(none_stop=True, interval=0)

@@ -46,7 +46,6 @@ def connection_db(db_password, db_ads):
     return connection
 
 
-#TODO: Реализовать универсальный метод (передача названия тадлицы, названия колонок, типа значения, типа ключа)
 def create_ads_table(connection, cursor):
 
     r""" Создает таблицу с информацией из объявлений
@@ -85,7 +84,6 @@ def create_soup(url):
     return soup
 
 
-#TODO: Подумать над типом возвращаемого значения
 def get_info(tr):
 
     r""" Возвращает данные по объекту недвижимости на основе тега с объявлением
@@ -107,7 +105,6 @@ def get_info(tr):
     return info
 
 
-#TODO: Как можно написать униваерсально?
 def save_info(info, cursor):
 
     r""" Сохраняет информацию в базу данных
